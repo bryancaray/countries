@@ -104,7 +104,6 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
     private val _errorLiveData = MutableLiveData<String>()
     val errorLiveData: LiveData<String> = _errorLiveData
 
-
     private val _countries = MutableStateFlow<List<CountriesModel.CountryModel>>(emptyList())
     val getGetCountries: StateFlow<List<CountriesModel.CountryModel>> = _countries.asStateFlow()
 

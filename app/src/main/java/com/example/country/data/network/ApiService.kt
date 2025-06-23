@@ -8,8 +8,6 @@ import retrofit2.http.GET
 
 
 interface ApiService {
-
     @GET("countries.json")
     suspend fun getCountries(): Response<List<CountryReponse>>
-
 }

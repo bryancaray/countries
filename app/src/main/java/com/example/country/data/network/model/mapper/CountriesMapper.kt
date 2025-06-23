@@ -37,7 +37,6 @@ fun List<CountryEntity>.toDomainFromEntity(): Countries {
     })
 }
 
-
 @Keep
 fun Countries.Country.toEntity(): CountryEntity {
     return CountryEntity(
