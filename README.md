@@ -1,6 +1,6 @@
 # 🌍 Country Search App
 
-A clean and modern Android application built with Kotlin that allows users to search for countries and view their details. Designed using the **MVVM architecture**, with **manual dependency injection**, **Retrofit** for fetching data, and **Room** for local storage.
+A clean and modern Android application built with Kotlin that allows users to search for countries and view their details. Designed using the **MVVM architecture**, **Retrofit** for fetching data, and **Room** for local storage.
 
 ---
 
