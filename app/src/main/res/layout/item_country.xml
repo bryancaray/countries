@@ -22,7 +22,7 @@
             android:layout_marginEnd="12dp"
             android:layout_weight=".5"
             android:contentDescription="Flag"
-            android:scaleType="centerCrop" />
+            android:scaleType="fitCenter" />
 
         <LinearLayout
             android:layout_width="0dp"

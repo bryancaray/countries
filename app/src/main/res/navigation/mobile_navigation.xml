@@ -9,7 +9,8 @@
         android:id="@+id/navigation_home"
         android:name="com.example.country.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
+
         <action
             android:id="@+id/action_navigation_home_to_navigation_country_details"
             app:destination="@id/navigation_country_details" />
@@ -17,7 +18,12 @@
 
     <fragment
         android:id="@+id/navigation_country_details"
-        android:name="com.example.country.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_country_details" />
+        android:name="com.example.country.ui.countrydetails.CountryDetailsFragment"
+        android:label="@string/title_details"
+        tools:layout="@layout/fragment_country_details" >
+        <argument
+            android:name="countryJson"
+            app:argType="string"
+            app:nullable="false" />
+    </fragment>
 </navigation>

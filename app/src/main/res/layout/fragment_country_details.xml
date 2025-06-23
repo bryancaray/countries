@@ -2,50 +2,96 @@
     android:id="@+id/detailLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp"
-    android:background="#FFFFFF">
+    android:background="#FFFFFF"
+    android:padding="24dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/imageDetailFlag"
+            android:id="@+id/imgFlag"
             android:layout_width="160dp"
             android:layout_height="100dp"
             android:layout_marginBottom="24dp"
             android:scaleType="centerCrop" />
 
         <TextView
-            android:id="@+id/textDetailCountry"
-            android:layout_width="wrap_content"
+            android:id="@+id/txtDetailCountry"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
             android:text="Afghanistan (AF)"
-            android:textStyle="bold"
-            android:textSize="22sp"
             android:textColor="#1A1A1A"
-            android:layout_marginBottom="16dp" />
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textCapital"
-            style="@style/DetailText"
-            android:text="Capital: Kabul" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
 
-        <TextView
-            android:id="@+id/textRegion"
-            style="@style/DetailText"
-            android:text="Region: AS" />
+            <TextView
+                style="@style/DetailText"
+                android:text="Capital: "
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/textLanguage"
-            style="@style/DetailText"
-            android:text="Language: Pashto (ps)" />
+            <TextView
+                android:id="@+id/txtCapital"
+                style="@style/DetailText"
+                android:text="Capital: Kabul" />
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/textCurrency"
-            style="@style/DetailText"
-            android:text="Currency: Afghan afghani (AFN) ؋" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+
+            <TextView
+                style="@style/DetailText"
+                android:text="Region: "
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtRegion"
+                style="@style/DetailText"
+                android:text="AS" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+
+            <TextView
+                style="@style/DetailText"
+                android:text="Language: "
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtLanguage"
+                style="@style/DetailText"
+                android:text="Pashto (ps)" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2">
+
+            <TextView
+                style="@style/DetailText"
+                android:text="Currency: "
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtCurrency"
+                style="@style/DetailText"
+                android:text="Afghan afghani (AFN) ؋" />
+        </LinearLayout>
+
     </LinearLayout>
 </ScrollView>

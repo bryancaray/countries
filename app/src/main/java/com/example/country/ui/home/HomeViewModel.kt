@@ -31,15 +31,19 @@ class HomeViewModel(
 ) : ViewModel() {
 
     init {
-
         viewModelScope.launch {
             if (networkHelper.isConnected()) {
                 getCountries()
             } else {
+                _errorLiveData.value = "No Internet Connection"
                 getCountriesLocal()
             }
         }
     }
+
+    private val _errorLiveData = MutableLiveData<String>()
+    val errorLiveData: LiveData<String> = _errorLiveData
+
 
     private val _countries = MutableStateFlow<List<CountriesModel.CountryModel>>(emptyList())
     val getGetCountries: StateFlow<List<CountriesModel.CountryModel>> = _countries.asStateFlow()
@@ -50,7 +54,7 @@ class HomeViewModel(
             getCountriesUseCase.getCountries().collectLatest {
                 when (it) {
                     is Result.Failed -> {
-
+                        _errorLiveData.postValue("Error: ${it.errorCode}")
                     }
 
                     Result.Loading -> {
