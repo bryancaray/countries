@@ -29,17 +29,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private val _binding by viewBinding(FragmentHomeBinding::bind)
 
 
-    private val _viewModel by viewModels<HomeViewModel>(factoryProducer = {
-        viewModelFactory {
-            HomeViewModel(
-                NetworkHelper(requireContext()),
-                CountryApplication.appModule.getCountriesUseCase,
-                CountryApplication.appModule.getLocalCountriesUseCase,
-                CountryApplication.appModule.insertCountryUseCase,
-                CountryApplication.postExecutionThread
-            )
-        }
-    })
+    private val _viewModel by viewModels<HomeViewModel>()
 
 
     val onCountriesActionCallback by lazy {

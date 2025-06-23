@@ -2,10 +2,10 @@ package com.example.country.data
 
 
 import com.example.country.data.local.CountryDao
-import com.example.country.data.local.model.CountryEntity
-import com.example.country.data.network.model.CountriesResponse
 import com.example.country.data.network.model.CountryReponse
-import com.example.country.data.network.model.mapper.toDomain
+import com.example.country.data.network.model.mapper.toDomainFromEntity
+import com.example.country.data.network.model.mapper.toDomainFromResponse
+import com.example.country.data.network.model.mapper.toEntity
 import com.example.country.data.repository.NetworkDataSource
 import com.example.country.domain.NetworkResult
 import com.example.country.domain.Result
@@ -41,7 +41,7 @@ class RepositoryImpl(
                 val countryResponse = result.data as List<CountryReponse>
                 emit(
                     Result.Success(
-                        data = countryResponse.toDomain()
+                        data = countryResponse.toDomainFromResponse()
                     )
                 )
             }
@@ -58,15 +58,7 @@ class RepositoryImpl(
     override suspend fun insertCountry(country: Countries) {
         countryDao.deleteAll()
         countryDao.insertAll(country.countriesList.map { country ->
-            CountryEntity(
-                name = country.name,
-                code = country.code,
-                currency = country.currency,
-                flag = country.flag,
-                language = country.language,
-                capital = country.capital,
-                region = country.region
-            )
+            country.toEntity()
         })
     }
 
@@ -74,17 +66,7 @@ class RepositoryImpl(
         emit(Result.Loading)
         emit(
             Result.Success(
-                Countries(countriesList = countryDao.getAllCountry().map {
-                    Countries.Country(
-                        name = it.name,
-                        currency = it.currency,
-                        flag = it.flag,
-                        language = it.language,
-                        capital = it.capital,
-                        code = it.code,
-                        region = it.region
-                    )
-                })
+                countryDao.getAllCountry().toDomainFromEntity()
             )
         )
     }

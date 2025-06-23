@@ -11,7 +11,6 @@ A clean and modern Android application built with Kotlin that allows users to se
 - ⚡ Real-time search with debounce
 - 📥 Saves data to Room for offline access
 - 💡 Built with clean architecture (MVVM)
-- 💉 Manual dependency injection (no Hilt or Dagger)
 
 ---
 

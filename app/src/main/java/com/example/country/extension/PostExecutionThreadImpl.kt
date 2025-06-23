@@ -1,4 +1,4 @@
-package com.example.country.di
+package com.example.country.extension
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
