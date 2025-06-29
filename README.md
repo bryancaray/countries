@@ -33,6 +33,9 @@ A clean and modern Android application built with Kotlin that allows users to se
 ### 🔍 Search Result
 ![Search](assets/screenshots/home_search.png)
 
+### 🔍 Country Details
+![Search](assets/screenshots/details.png)
+
 ### 🌐 Landscape Mode
 ![Landscape](assets/screenshots/landscape.png)
 

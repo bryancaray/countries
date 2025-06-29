@@ -93,6 +93,14 @@
                 style="@style/DetailText"
                 android:text="Afghan afghani (AFN) ؋" />
         </LinearLayout>
-
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Back"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/purple_500"
+            android:textColor="@android:color/white" />
     </LinearLayout>
 </ScrollView>

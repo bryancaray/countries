@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.country.CountryApplication
@@ -56,7 +57,9 @@ class CountryDetailsFragment : Fragment(R.layout.fragment_country_details) {
                 txtCurrency.text = currency
                 txtLanguage.text = language
                 Glide.with(requireContext()).load(flag).error(R.drawable.ic_error).into(imgFlag)
-
+                btnBack.setOnClickListener {
+                    findNavController().popBackStack()
+                }
             }
         }
     }
